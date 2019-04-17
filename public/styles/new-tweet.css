@@ -1,5 +1,5 @@
 .new-tweet {
-  border-radius: 10px;
+  border-radius: 5px;
   background-color: #eee;
   border: solid 1px #bebebe;
   margin: 2em;
@@ -16,7 +16,7 @@
   height: 100px;
   width: 95%;
   padding: 2%;
-  margin: auto 2%;
+  margin: 4% 2% 0.25% 2%;
 }
 .new-tweet span {
   margin: 2% 2% 1%;
@@ -26,9 +26,11 @@
 }
 
 .new-tweet input{
-  margin: 2% 2% 2%;
+  margin: 0.5% 2% 2% 2%;
 
-
+}
+.new-tweet span{
+  margin-right: 25px;
 }
 
 

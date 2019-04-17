@@ -10,6 +10,9 @@ html {
   box-sizing: inherit;
 }
 
+/**{
+  border: solid 1px red;
+}*/
 /*
  * Global layout stuff
  */

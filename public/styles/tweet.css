@@ -1,0 +1,76 @@
+
+article.tweet {
+  border-radius: 4px;
+  border: solid 1px #eee;
+  margin: 2em;
+}
+
+article.tweet:hover header{
+  opacity: 1;
+}
+
+article.tweet:hover {
+  border: solid 1px #bebebe;
+}
+
+article.tweet:hover .icons {
+  visibility: visible;
+
+}
+
+
+article.tweet header{
+  border-radius: 4px 4px 0px 0px;
+  display: grid;
+  grid-template-columns: 20% 60% 15%;
+  width: 100%;
+  background-color: #eee;
+  padding: 10px;
+  opacity: 0.5;
+}
+
+article.tweet .avatar {
+  height: 60px;
+  grid-column-start: 1;
+}
+article.tweet .username {
+  grid-column-start: 2;
+  font-weight: bold;
+  font-size: 2em;
+  margin: 3px 0px 0px 5px;
+}
+article.tweet .handle {
+  grid-column-start: 3;
+  font-weight: medium;
+  font-size: 1.25em;
+  color: #666666;
+  margin: 10px 0px 0px 0px;
+}
+
+article.tweet .body {
+  padding: 20px;
+  font-size: 1.30em;
+}
+article.tweet footer {
+  border-top: solid 1px #eee;
+  display: grid;
+  grid-template-columns: 70% 30%;
+  width: 100%;
+  padding: 0px 5px 5px 5px
+}
+article.class .date {
+  grid-column-start: 1;
+}
+article.tweet .icons {
+  visibility: hidden;
+  grid-column-start: 2;
+  padding: 14px 0px 14px 30px;
+}
+
+article.tweet .icons > i {
+  color: #00a087;
+  padding: 1px;
+  font-size: 1.25em;
+
+
+}
