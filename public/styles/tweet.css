@@ -19,7 +19,7 @@ article.tweet:hover .icons {
 }
 
 
-article.tweet header{
+article.tweet header {
   border-radius: 4px 4px 0px 0px;
   display: grid;
   grid-template-columns: 20% 60% 15%;
@@ -71,6 +71,11 @@ article.tweet .icons > i {
   color: #00a087;
   padding: 1px;
   font-size: 1.25em;
-
-
 }
+
+article.tweet p{
+  max-width: 100%;
+  overflow-wrap: break-word;
+}
+
+

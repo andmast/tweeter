@@ -2,8 +2,9 @@
   border-radius: 5px;
   background-color: #eee;
   border: solid 1px #bebebe;
-  margin: 2em;
+  margin: 0;
   padding: 5px 5px 5px 5px;
+  display: none;
 }
 .new-tweet h2{
   border-bottom: solid 2px ;
