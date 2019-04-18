@@ -111,10 +111,10 @@ $(document).ready(function() {
   const check = $("form textarea").val().length
 
   if(check === 0 || check === null){
-    return alert("No characters enterd into the textarea");
+    return $(".error").slideToggle().text("No characters enterd into the textarea");
   }
   if(check > 140){
-    return alert("Over 140 characters");
+    return $(".error").slideToggle().text("Over 140 characters");
   }
   $.post("/tweets", $(this).serialize(), function(data, status){
     alert("Data: " + this.data + "\nStatus: " + status);
