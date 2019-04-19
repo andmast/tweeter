@@ -21,8 +21,9 @@ article.tweet:hover .icons {
 
 article.tweet header {
   border-radius: 4px 4px 0px 0px;
-  display: grid;
-  grid-template-columns: 20% 60% 15%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
   width: 100%;
   background-color: #eee;
   padding: 10px;
@@ -31,20 +32,16 @@ article.tweet header {
 
 article.tweet .avatar {
   height: 60px;
-  grid-column-start: 1;
 }
 article.tweet .username {
-  grid-column-start: 2;
   font-weight: bold;
   font-size: 2em;
   margin: 3px 0px 0px 5px;
 }
 article.tweet .handle {
-  grid-column-start: 3;
   font-weight: medium;
-  font-size: 1.25em;
+  font-size: 1em;
   color: #666666;
-  margin: 10px 0px 0px 0px;
 }
 
 article.tweet .body {
