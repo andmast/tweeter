@@ -32,12 +32,8 @@
   padding: .5em;
   margin: 1em 5em;
   justify-content: center;
+  cursor: pointer;
 }
 
-.error {
-  display: flex;
-  background-color: red;
-  color: white;
-  justify-content: center;
-}
+
 

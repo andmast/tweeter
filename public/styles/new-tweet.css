@@ -26,12 +26,22 @@
   justify-content: bottom;
 }
 
-.new-tweet input{
+.new-tweet input {
+  cursor: pointer;
   margin: 0.5% 2% 2% 2%;
 
 }
 .new-tweet span{
   margin-right: 25px;
+}
+
+.error {
+ background-color: red;
+ color: white;
+ justify-content: center;
+ align-items: center;
+ padding: .02em;
+ height: 2em;
 }
 
 

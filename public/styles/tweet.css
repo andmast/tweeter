@@ -35,13 +35,14 @@ article.tweet .avatar {
 }
 article.tweet .username {
   font-weight: bold;
-  font-size: 2em;
-  margin: 3px 0px 0px 5px;
+  font-size: 1.85em;
 }
 article.tweet .handle {
-  font-weight: medium;
   font-size: 1em;
   color: #666666;
+  align-self: normal;
+  font-style: oblique;
+  font-weight: bold;
 }
 
 article.tweet .body {
