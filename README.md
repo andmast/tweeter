@@ -17,3 +17,16 @@ Tweeter is a simple, single-page Twitter clone.
 - chance: ^1.0.2
 - md5: ^2.1.0
 - mongodb": ^3.2.3
+
+
+## Final Product Screenshots
+
+### Home page
+!["Home page"](public/images/Home.png)
+### Create new Short urls.
+!["Create new short urls"](docs/createNew.png)
+### Urls added to user database.
+!["Urls added to user database"](docs/urlsList.png)
+### Edit previously made urls.
+!["Edit previous urls"](docs/edit.png)
+
