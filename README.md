@@ -31,3 +31,4 @@ Tweeter is a simple, single-page Twitter clone.
 
 ### Error message for empty tweet or over 140 count.
 !["Error message for empty tweet or over 140 count"](public/images/Errorscreen.png)
+!["Error message for empty tweet or over 140 count"](public/images/ErrorOver140.png)
