@@ -36,12 +36,12 @@
 }
 
 .error {
- background-color: red;
- color: white;
- justify-content: center;
- align-items: center;
- padding: .02em;
- height: 2em;
+  background-color: pink;
+  color: black;
+  justify-content: center;
+  align-items: center;
+  padding: .02em;
+  height: 2em;
 }
 
 

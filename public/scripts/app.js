@@ -3,6 +3,7 @@
  * jQuery is already loaded
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
+
   function timeDiff(time1, time2) {
 
    const msPerMinute = 60 * 1000;
@@ -91,10 +92,10 @@ $(document).ready(function() {
   const check = $("form textarea").val().trim().length
 
   if(check === 0 || check === null){
-    return $(".error").slideDown().text("Nothing said in your tweet");
+    return $(".error").slideDown().text("Nothing said in your tweet").css("display", "flex");
   }
   if(check > 140){
-    return $(".error").slideDown().text("Over 140 characters, woah you have got too much to say");
+    return $(".error").slideDown().text("Over 140 characters, woah you have got too much to say").css("display", "flex");
   }
   $.post("/tweets", $(this).serialize(), function(data, status){
     loadTweets();
@@ -107,11 +108,10 @@ $(document).ready(function() {
 
 
 $(".compose").click(function() {
-  $( ".new-tweet" ).slideToggle()
-  $("textarea").focus()
-  $(".error").slideUp()
-  }
-);
+    $( ".new-tweet" ).slideToggle()
+    $("textarea").focus()
+    $(".error").slideUp()
+  });
 
 
 
