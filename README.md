@@ -23,10 +23,11 @@ Tweeter is a simple, single-page Twitter clone.
 
 ### Home page
 !["Home page"](public/images/Home.png)
-### Create new Short urls.
-!["Create new short urls"](docs/createNew.png)
-### Urls added to user database.
-!["Urls added to user database"](docs/urlsList.png)
-### Edit previously made urls.
-!["Edit previous urls"](docs/edit.png)
+### Compose New Tweets.
+!["Compose New Tweets"](public/images/composeButtonFocus.png)
+### Tweet Charc Counters.
+!["Char Count"](public/images/CharCount.png)
+!["Char Count Over 140"](public/images/Charcountover.png)
 
+### Error message for empty tweet or over 140 count.
+!["Error message for empty tweet or over 140 count"](public/images/Errorscreen.png)
