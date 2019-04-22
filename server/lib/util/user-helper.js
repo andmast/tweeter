@@ -10,7 +10,7 @@ module.exports = {
   generateRandomUser: () => {
     const gender    = chance.gender();
     const firstName = chance.first({gender: gender});
-    const lastName  = chance.last();
+    const lastName  = chance.animal({type: 'pet'})
     const userName  = firstName + " " + lastName;
 
     let userHandle = "@";
@@ -27,11 +27,12 @@ module.exports = {
       userHandle += suffix;
     }
 
-    const avatarUrlPrefix = `https://vanillicon.com/${md5(userHandle)}`;
+    const avatarUrlPrefix = `https://api.adorable.io/avatars/285/${md5(userHandle)}@adorable.io`
+    ;
     const avatars = {
-      small:   `${avatarUrlPrefix}_50.png`,
+      small:   `${avatarUrlPrefix}.png`,
       regular: `${avatarUrlPrefix}.png`,
-      large:   `${avatarUrlPrefix}_200.png`
+      large:   `${avatarUrlPrefix}.png`
     }
 
     return {

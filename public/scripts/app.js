@@ -4,56 +4,37 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-const data = [
-  {
-    "user": {
-      "name": "Newton",
-      "avatars": {
-        "small":   "https://vanillicon.com/788e533873e80d2002fa14e1412b4188_50.png",
-        "regular": "https://vanillicon.com/788e533873e80d2002fa14e1412b4188.png",
-        "large":   "https://vanillicon.com/788e533873e80d2002fa14e1412b4188_200.png"
-      },
-      "handle": "@SirIsaac"
-    },
-    "content": {
-      "text": "If I have seen further it is by standing on the shoulders of giants"
-    },
-    "created_at": 1461116232227
-  },
-  {
-    "user": {
-      "name": "Descartes",
-      "avatars": {
-        "small":   "https://vanillicon.com/7b89b0d8280b93e2ba68841436c0bebc_50.png",
-        "regular": "https://vanillicon.com/7b89b0d8280b93e2ba68841436c0bebc.png",
-        "large":   "https://vanillicon.com/7b89b0d8280b93e2ba68841436c0bebc_200.png"
-      },
-      "handle": "@rd" },
-    "content": {
-      "text": "Je pense , donc je suis"
-    },
-    "created_at": 1461113959088
-  },
-  {
-    "user": {
-      "name": "Johann von Goethe",
-      "avatars": {
-        "small":   "https://vanillicon.com/d55cf8e18b47d4baaf60c006a0de39e1_50.png",
-        "regular": "https://vanillicon.com/d55cf8e18b47d4baaf60c006a0de39e1.png",
-        "large":   "https://vanillicon.com/d55cf8e18b47d4baaf60c006a0de39e1_200.png"
-      },
-      "handle": "@johann49"
-    },
-    "content": {
-      "text": "Es ist nichts schrecklicher als eine tätige Unwissenheit."
-    },
-    "created_at": 1461113796368
-  }
-];
+  function timeDiff(time1, time2) {
+
+   const msPerMinute = 60 * 1000;
+   const msPerHour = msPerMinute * 60;
+   const msPerDay = msPerHour * 24;
+   const msPerMonth = msPerDay * 30;
+   const msPerYear = msPerDay * 365;
+
+   let diff = time1 - time2;
+
+   if (diff < msPerMinute) {
+     return Math.round(diff/1000) + ' seconds ago';
+   } else if (diff < msPerHour) {
+     return Math.round(diff/msPerMinute) + ' minutes ago';
+   } else if (diff < msPerDay ) {
+     return Math.round(diff/msPerHour ) + ' hours ago';
+   } else if (diff < msPerMonth) {
+     return Math.round(diff/msPerDay) + ' days ago';
+   } else if (diff < msPerYear) {
+     return Math.round(diff/msPerMonth) + ' months ago';
+   } else {
+     return Math.round(diff/msPerYear ) + ' years ago';
+   }
+ }
+
 
 $(document).ready(function() {
 
   function createTweetElement(tweetData){
+
+    const tweetDate = timeDiff(Date.now(),tweetData.created_at);
 
     let $tweet = $("<article>").addClass("tweet");
     let $header = $("<header>");
@@ -63,9 +44,9 @@ $(document).ready(function() {
     let $tweetContainer = $("<div>").addClass("body");
     let $tweetText = $("<p>").text(tweetData.content.text);
     let $footer = $("<footer>")
-    let $date = $("<p>").addClass("date").text(tweetData.created_at);
+    let $date = $("<p>").addClass("date").text(tweetDate);
     let $iconContainer = $("<div>").addClass("icons");
-    let $flag = $("<i>").addClass("fab fa-font-awesome-flag")
+    let $flag = $("<i>").addClass("fab fa-font-awesome-flag");
     let $retweet = $("<i>").addClass("fas fa-retweet");
     let $heart = $("<i>").addClass("fas fa-heart");
 
@@ -81,7 +62,7 @@ $(document).ready(function() {
 
   function renderTweets(tweets){
     tweets.forEach(function(element){
-      $("#tweets-container").append(createTweetElement(element));
+      $("#tweets-container").prepend(createTweetElement(element));
     });
 
   };
@@ -108,29 +89,29 @@ $(document).ready(function() {
 
  $( "form" ).submit(function( event ) {
   event.preventDefault();
-  const check = $("form textarea").val().length
+  const check = $("form textarea").val().trim().length
 
   if(check === 0 || check === null){
-    return $(".error").slideToggle().text("No characters enterd into the textarea");
+    return $(".error").slideDown().text("Nothing said in your tweet").css("display", "flex");
   }
   if(check > 140){
-    return $(".error").slideToggle().text("Over 140 characters");
+    return $(".error").slideDown().text("Over 140 characters, woah you have got too much to say").css("display", "flex");
   }
   $.post("/tweets", $(this).serialize(), function(data, status){
-    alert("Data: " + this.data + "\nStatus: " + status);
     loadTweets();
   }).done(function(){
     $("form textarea").val("")
     $("textarea").trigger("input",[""]).select()
+    $(".error").slideUp()
   });
 });
 
 
 $(".compose").click(function() {
-  $( ".new-tweet" ).slideToggle()
-  $("textarea").focus()
-  }
-);
+    $( ".new-tweet" ).slideToggle()
+    $("textarea").focus()
+    $(".error").slideUp()
+  });
 
 
 

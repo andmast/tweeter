@@ -15,7 +15,11 @@
     "chance": "^1.0.2",
     "express": "^4.13.4",
     "md5": "^2.1.0",
+<<<<<<< HEAD
     "mongodb": "^3.2.3"
+=======
+    "mongodb": "^2.2.36"
+>>>>>>> feature/mongodb
   },
   "devDependencies": {
     "nodemon": "^1.9.2"
